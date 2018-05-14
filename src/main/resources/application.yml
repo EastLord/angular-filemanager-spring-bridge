@@ -1,0 +1,25 @@
+#############################################
+########### FILEMANAGER CONFIG ##############
+#############################################
+config:
+    filemanager:
+        repoBasePath: /Users/qiutiandong/Documents
+        onlyFolders: false
+        defaultLang: zh_cn
+        allowedActions:
+            upload: true
+            rename: true
+            move: true
+            copy: true
+            edit: true
+            changePermissions: true
+            compress: true
+            extract: true
+            download: true
+            downloadMultiple: true
+            remove: true
+            createFolder: true
+            compressChooseName: true
+            preview: true
+            pickFiles: true
+            pickFolders: true
