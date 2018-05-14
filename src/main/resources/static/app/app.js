@@ -14,6 +14,7 @@
 			var defaults = fileManagerConfigProvider.$get();
 			fileManagerConfigProvider.set({
 					appName : 'Spring-filemanager',
+                	defaultLang: response.data.defaultLang,
 					listUrl : 'action/list',
 					uploadUrl : 'action/upload',
 					renameUrl : 'action/rename',

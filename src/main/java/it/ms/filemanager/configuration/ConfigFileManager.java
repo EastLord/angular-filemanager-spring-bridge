@@ -15,6 +15,8 @@ public class ConfigFileManager implements Serializable {
 
 	private String basePath;
 
+	private String defaultLang;
+
 	private boolean onlyFolders;
 
 	private final AllowedAction allowedActions = new AllowedAction();
@@ -47,6 +49,21 @@ public class ConfigFileManager implements Serializable {
 	 */
 	public void setBasePath(String basePath) {
 		this.basePath = basePath;
+	}
+
+	/**
+	 * @return the defaultLang
+	 */
+	public String getDefaultLang() {
+		return defaultLang;
+	}
+
+	/**
+	 * @param defaultLang
+	 *            the defaultLang to set
+	 */
+	public void setDefaultLang(String defaultLang) {
+		this.defaultLang = defaultLang;
 	}
 
 	/**
