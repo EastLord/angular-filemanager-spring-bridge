@@ -15,7 +15,7 @@ public class Item implements Serializable {
 
 	private String rights;
 
-	private Date date;
+	private String date;
 
 	private long size;
 
@@ -34,7 +34,7 @@ public class Item implements Serializable {
 	 * @param size
 	 * @param type
 	 */
-	public Item(String name, String rights, Date date, long size, Type type) {
+	public Item(String name, String rights, String date, long size, Type type) {
 		super();
 		this.name = name;
 		this.rights = rights;
@@ -76,7 +76,7 @@ public class Item implements Serializable {
 	/**
 	 * @return the date
 	 */
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
@@ -84,7 +84,7 @@ public class Item implements Serializable {
 	 * @param date
 	 *            the date to set
 	 */
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

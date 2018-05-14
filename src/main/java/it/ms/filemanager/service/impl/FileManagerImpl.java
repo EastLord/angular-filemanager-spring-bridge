@@ -14,6 +14,7 @@ import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -57,6 +58,9 @@ public class FileManagerImpl implements FileManager {
 
 		List<Item> items = new ArrayList<>();
 
+		String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+		SimpleDateFormat dt = new SimpleDateFormat(DATE_FORMAT);
+
 		try (DirectoryStream<Path> directoryStream = Files
 				.newDirectoryStream(Paths.get(configFileManager.getRepoBasePath(), path))) {
 			for (Path p : directoryStream) {
@@ -67,7 +71,7 @@ public class FileManagerImpl implements FileManager {
 				Item item = new Item();
 				item.setName(p.getFileName().toString());
 				item.setRights(PermissionUtils.getPermissions(p));
-				item.setDate(new Date(attrs.lastModifiedTime().toMillis()));
+				item.setDate(dt.format(new Date(attrs.lastModifiedTime().toMillis())));
 				item.setSize(attrs.size());
 				item.setType(attrs.isDirectory() ? Type.dir : Type.file);
 				items.add(item);
